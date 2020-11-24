@@ -1,0 +1,100 @@
+body {
+	font-family: Calibri;
+	box-sizing: border-box;
+}
+#q-sub {
+	max-width: 800px;
+	margin: 0 auto;
+}
+.title {
+	display: block;
+	margin-bottom: 21px;
+	text-align: center;
+}
+table {
+	border-spacing: 0;
+	border-collapse: collapse;
+	margin-bottom: 21px;
+	width: 100%;
+	border-top: 1px solid;
+	border-left: 1px solid;
+}
+table:nth-child(1),
+table:nth-child(2),
+table:nth-child(3) {
+	table-layout: fixed;
+}
+table tr td {
+	padding-top: 0;
+	margin: 0;
+	border-bottom: 1px solid;
+	border-right: 1px solid;
+	min-width: 100px;
+	overflow: hidden;
+}
+.inline {
+	table-layout: fixed;
+	display: inline-table;
+	width: 49.7%;
+	vertical-align: top;
+}
+table.centered {
+	text-align: center;
+}
+table tr td.cell-centered,
+table tr td.cell-centered input {
+	text-align: center;
+}
+table tr td.no-bottom-border {
+	border-bottom: none;
+}
+input[type=number] {
+	text-align: right;
+}
+input[type=number],
+select {
+	background-color: #b4c6e7;
+}
+table tr td.cell-break {
+	border-bottom: none;
+	min-width: 6px;
+}
+.table-stack {
+	display: inline-flex;
+	flex-direction: column;
+}
+.table-stack.bottom {
+	vertical-align: bottom;
+}
+select,
+input {
+	margin-bottom: -1px;
+	margin-left: -1px;
+	width: calc(100% + 2px);
+	height: 23px;
+	border: none;
+	outline: none;
+}
+
+select {
+	cursor: pointer;
+}
+select option {
+	background-color: #fff;
+}
+.dollar-amount {
+	text-align: right;
+}
+.dollar-amount:before {
+	content: '$';
+	position: absolute;
+	margin-left: -8px;
+}
+input.dollar-amount {
+	background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' version='1.1' height='16px' width='25px'><text x='2' y='13' fill='black' font-size='10' font-family='Calibri'>$</text></svg>");
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+.percentage:after {
+	content: '%'
+}

@@ -1,0 +1,433 @@
+<link rel="stylesheet" href="style.css">
+<section id="q-sub">
+	<table>
+		<tr>
+			<td>
+				Borrower Name
+			</td>
+			<td>
+				<input type="text" name="borrower">
+			</td>
+		</tr>
+		<tr>
+			<td>
+				Co-Borrower Name
+			</td>
+			<td>
+				<input type="text" name="co-borrower">
+			</td>
+		</tr>
+	</table>
+	<table>
+		<tr>
+			<td>
+				Loan Officer Name
+			</td>
+			<td>
+				<input type="type" name="loan-officer">
+			</td>
+		</tr>
+		<tr>
+			<td>
+				Loan Officer Company Name
+			</td>
+			<td>
+				<input type="text" name="loan-officer-company">
+			</td>
+		</tr>
+		<tr>
+			<td>
+				Loan Officer MLO #
+			</td>
+			<td>
+				<input type="text" name="loan-officer-MLO">
+			</td>
+		</tr>
+		<tr>
+			<td>
+				Loan Officer Phone #
+			</td>
+			<td>
+				<input type="text" name="loan-officer-phone">
+			</td>
+		</tr>
+		<tr>
+			<td>
+				Loan Officer Email
+			</td>
+			<td>
+				<input type="email" name="loan-officer-email">
+			</td>
+		</tr>
+	</table>
+	<table>
+		<tr>
+			<td>
+				Processor Name
+			</td>
+			<td>
+				<input type="text" name="processor">
+			</td>
+		</tr>
+		<tr>
+			<td>
+				Processor Phone #
+			</td>
+			<td>
+				<input type="text" name="processor-phone">
+			</td>
+		</tr>
+		<tr>
+			<td>
+				Processor Email
+			</td>
+			<td>
+				<input type="text" name="processor-email">
+			</td>
+		</tr>
+	</table>
+	<a 
+		href="https://partners.quorumfcu.org/wp-content/uploads/2020/09/Quorum-Interest-Only-HELOC-Rate-Matrix-and-Program-Guidelines-AE-09-15-2020.pdf" 
+		target="_blank"
+		class="title">Today's Rates</a>
+
+	<table class="centered">
+		<tr>
+			<td class="no-bottom-border">
+				Prime
+			</td>
+			<td class="no-bottom-border">
+				Margin
+			</td>
+			<td class="no-bottom-border">
+				Rate
+			</td>
+		</tr>
+		<tr>
+			<td class="cell-centered">
+				<input  id="primeRate" type="number" step="0.01" value="3.25">
+			</td>
+			<td class="cell-centered">
+				<input  id="margin" type="number" step="0.01" value="2.50">
+			</td>
+			<td class="cell-centered" id="rate">
+				5.75
+			</td>
+		</tr>
+	</table>
+	<table class="inline">
+		<tr>
+			<td rowspan="3">
+				Residence Type<br>Property Type<br>Type of Submission
+			</td>
+			<td>
+				<select>
+					<option>Owner Occupied</option>
+					<option>Second/Vacation</option>
+					<option selected="true">Investment</option>
+				</select>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<select>
+					<option>SFR</option>
+					<option>2 Unit</option>
+					<option>3-4 Unit</option>
+					<option selected="true">Condominium</option>
+					<option>PUD</option>
+				</select>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<select>
+					<option>Simultaneous Purchase</option>
+					<option selected="true">Simultaneous Refi</option>
+					<option>Standalone</option>
+				</select>
+				
+			</td>
+		</tr>
+	</table>
+	<table class="inline">
+		<tr>
+			<td align="center">
+				Estimated Closing Date
+			</td>
+		</tr>
+		<tr>
+			<td rowspan="2" class="cell-centered">
+				<input type="date" value="2020-10-01">
+			</td>
+		</tr>
+	</table>
+	<table class="inline">
+		<tr>
+			<td align="center">
+				Credit Score Summary:
+			</td>
+			<td align="center">
+				Middle Score
+			</td>
+		</tr>
+		<tr>
+			<td align="right">
+				Borrower
+			</td>
+			<td class="cell-centered">
+				<input type="number" id="borrowerRate" name="borrower-rate" value="700">
+			</td>
+		</tr>
+		<tr>
+			<td align="right">
+				Co-Borrower
+			</td>
+			<td class="cell-centered">
+				<input type="number" id="coBorrowerRate" name="co-borrower-rate" value="700">
+			</td>
+		</tr>
+		<tr>
+			<td align="right">
+				Lower Middle Score for UW
+			</td>
+			<td align="center" id="lower-middle-score-UW">
+			</td>
+		</tr>
+	</table>
+	<table class="inline centered">
+		<tr>
+			<td>
+				Total Monthly Income
+			</td>
+		</tr>
+		<tr>
+			<td class="cell-centered">
+				<input id="borrowerMonthlyIncome" type="number" step="0.01" value="10000.00" class="dollar-amount">
+			</td>
+		</tr>
+		<tr>
+			<td class="cell-centered">
+				<input id="coBorrowerMonthlyIncome" type="number" step="0.01" value="0.00" class="dollar-amount">
+			</td>
+		</tr>
+		<tr>
+			<td id="monthlyIncomeSum" class="dollar-amount">
+				 0.0
+			</td>
+		</tr>
+	</table>
+	<table>
+		<tr>
+			<td align="center" colspan="5">
+				LTV Summary:
+			</td>
+		</tr>
+		<tr>
+			<td>
+				Purchase Price/Appraised Value
+			</td>
+			<td>
+				<input id="purchasePrice" class="dollar-amount" type="number" step="0.01" value="1000000.00">
+			</td>
+			<td class="cell-break"></td>
+			<td>
+				CLTV
+			</td>
+			<td id="cltv">
+			</td>
+		</tr>
+		<tr>
+			<td>
+				Current 1st Mtg balance
+			</td>
+			<td>
+				<input id="firstMtgBalance" class="dollar-amount" type="number" step="0.01" value="400000.00">
+			</td>
+			<td class="cell-break"></td>
+			<td>
+				1st mtg LTV	
+			</td>
+			<td id="firstMtgLtv">
+			</td>
+		</tr>
+		<tr>
+			<td>
+				Requested HELOC Line amount
+			</td>
+			<td>
+				<input id="helocLineAmount" class="dollar-amount" type="number" step="0.01" value="1500.00">
+			</td>
+			<td class="cell-break"></td>
+			<td>
+				2nd mtg LTV
+			</td>
+			<td id="secondMtgLtv">
+			</td>
+		</tr>
+		<tr>
+			<td>
+				Amount Drawn at Close
+			</td>
+			<td>
+				<input id="drawnAtClose" type="number" step="0.01" value="0.00" class="dollar-amount">
+			</td>
+		</tr>
+		<tr>
+			<td>
+				Total Line Allowed for LTV
+			</td>
+			<td>
+				<input type="number" step="0.01" class="dollar-amount">
+			</td>
+		</tr>
+	</table>
+	<table class="inline">
+		<tr>
+			<td>
+				Debt Ratio Summary
+			</td>
+			<td class="cell-centered">
+				Residence
+			</td>
+		</tr>
+		<tr>
+			<td>
+				1st Mtg Payment (P & I)
+			</td>
+			<td>
+				<input id="firstMtgPayment" type="number" step="0.01" class="dollar-amount" value="1000">
+			</td>
+		</tr>
+		<tr>
+			<td>
+				Qual Payment (Prime + Margin; 20 YR Amort)
+			</td>
+			<td id="qualPayment" class="dollar-amount">
+				10.53
+			</td>
+		</tr>
+		<tr>
+			<td>
+				Q Interest Only Payment (Based on a 30 day month)
+			</td>
+			<td class="dollar-amount" id="qInterest">
+				718.75
+			</td>
+		</tr>
+		<tr>
+			<td>
+				Hazard Insurance
+			</td>
+			<td>
+				<input id="hazardInsurance" class="dollar-amount" type="number" step="0.01" value="100.00">
+			</td>
+		</tr>
+		<tr>
+			<td>
+				Property/RE Taxes
+			</td>
+			<td>
+				<input id="propertyTaxes" class="dollar-amount" type="number" step="0.01" value="500.00">
+			</td>
+		</tr>
+		<tr>
+			<td>
+				HOA Dues
+			</td>
+			<td>
+				<input id="HOADues" class="dollar-amount" type="number" step="0.01" value="25.00">
+			</td>
+		</tr>
+		<tr>
+			<td>
+				Other Expenses
+			</td>
+			<td>
+				<input id="other" class="dollar-amount" type="number" step="0.01" value="10.00">
+			</td>
+		</tr>
+		<tr>
+			<td>
+				Total Housing
+			</td>
+			<td id="totalHousing" class="dollar-amount">
+				2688.13
+			</td>
+		</tr>
+	</table>
+	<div class="table-stack bottom inline">
+		<table class="centered">
+			<tr>
+				<td>
+					Front End DTI
+				</td>
+				<td id="frontendDTI" class="percentage">					
+					<percentage>26.88</percentage>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Back End DTI
+				</td>
+				<td class="percentage">
+					<percentage>31.88</percentage>
+				</td>
+			</tr>
+		</table>
+		<table>
+			<tr>
+				<td align="center" colspan="2">
+					Post Closing Assets
+				</td>
+			</tr>
+			<tr>
+				<td>
+					6 Months
+				</td>
+				<td>
+					$16,128.75
+				</td>
+			</tr>
+			<tr>
+				<td>
+					9 Months
+				</td>
+				<td>
+					$24,193.13
+				</td>
+			</tr>
+			<tr>
+				<td>
+					12 Months
+				</td>
+				<td>
+					$32,257.50
+				</td>
+			</tr>
+		</table>
+	</div>
+	<table class="inline">
+		<tr>
+			<td>
+				Total Other Payments
+			</td>
+			<td>
+				<input class="dollar-amount" id="otherPayments" value="500.00" type="number" step="0.01">
+			</td>
+		</tr>
+		<tr>
+			<td>
+				Total Monthly Payments
+			</td>
+			<td class="dollar-amount" id="totalPayments">
+				3188.13
+			</td>
+		</tr>
+	</table>
+</section>
+<script
+  src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+  integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs="
+  crossorigin="anonymous"></script>
+<script type="text/javascript" src="script.js"></script>
