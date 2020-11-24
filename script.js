@@ -20,7 +20,7 @@ $(function(){
 		currCoBorrowerInc = parseFloat($("#coBorrowerMonthlyIncome").val()),
 		currQual          = parseFloat(qualPayment.html()),
 		heloc             = parseFloat($("#helocLineAmount").val()),
-		currQInterest     = parseFloat($("#qInterest").val()),
+		currQInterest     = parseFloat(qInterest.html()),
 		currPurchasePrice = parseFloat($("#purchasePrice").val()),
 		curr1stMtgBal     = parseFloat($("#firstMtgBalance").val()),
 	   
@@ -109,7 +109,7 @@ $(function(){
 			} else if (id == "firstMtgPayment") {
 				curr1stMtgPayment = parseFloat($("#firstMtgPayment").val());
 			} else {
-				currQual = parseFloat($("qualPayment").val());
+				currQual = parseFloat(qualPayment.val());
 			}
 			if (currOtherPayments == 0) {
 				currOtherPayments = parseFloat($("#otherPayments").val());
