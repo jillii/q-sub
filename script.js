@@ -9,16 +9,17 @@ $(function(){
 		qualPayment      = $("#qualPayment"),
 		qInterest        = $("#qInterest"),
 		frontendDTI      = $("#frontendDTI"),
+		backendDTI       = $("#backendDTI"),
 		
 		currPrimeRate     = parseFloat($("#primeRate").val()),
 		currMargin        = parseFloat($("#margin").val());
 		currRate          = parseFloat(rateInput.html()),
-		currBorrower      = $("#borrowerRate").val(),
-		currCoBorrower    = $("#coBorrowerRate").val(),
-		currBorrowerInc   = 0,
-		currCoBorrowerInc = 0,
+		currBorrower      = parseFloat($("#borrowerRate").val()),
+		currCoBorrower    = parseFloat($("#coBorrowerRate").val()),
+		currBorrowerInc   = parseFloat($("#borrowerMonthlyIncome").val()),
+		currCoBorrowerInc = parseFloat($("#coBorrowerMonthlyIncome").val()),
 		currQual          = parseFloat(qualPayment.html()),
-		heloc             = $("#helocLineAmount").val(),
+		heloc             = parseFloat($("#helocLineAmount").val()),
 		currQInterest     = parseFloat($("#qInterest").val()),
 		currPurchasePrice = parseFloat($("#purchasePrice").val()),
 		curr1stMtgBal     = parseFloat($("#firstMtgBalance").val()),
@@ -27,13 +28,13 @@ $(function(){
 		currPropertyTaxes   = parseFloat($("#propertyTaxes").val()),
 		currHOADues         = parseFloat($("#HOADues").val()),
 		other               = parseFloat($("#other").val()),
-		curr1stMtgPayment   = parseFloat($("#firstMtgPayment").val());
+		curr1stMtgPayment   = parseFloat($("#firstMtgPayment").val()),
 
 		currMonthlyIncomeTotal = 0,
-		currTotalHouse         = 0,
+		currTotalHouse         = parseFloat($("#totalHousing").html()),
 		currOtherPayments      = 0;
 
-	$(document).on("input change", qSub, function(e) {
+	$(document).on("input", qSub, function(e) {
 		var id = e.target.id;
 
 		if (id == "primeRate" || id == "margin") {
@@ -68,15 +69,11 @@ $(function(){
 			} else {
 				currCoBorrowerInc = parseFloat($("#coBorrowerMonthlyIncome").val());
 			}
-			if (currTotalHouse == 0) {
-				currTotalHouse = parseFloat($("#totalHousing").html());
-			}
-			console.log(currTotalHouse);
 			currMonthlyIncomeTotal = get_monthly_income(currBorrowerInc, currCoBorrowerInc);
 			monthlyIncomeSum.html(currMonthlyIncomeTotal);
 			
 			frontendDTI.html(get_frontend_dti(currMonthlyIncomeTotal, currTotalHouse));
-			
+			backendDTI.html(get_backend_dti((currTotalHouse + currOtherPayments), currMonthlyIncomeTotal));
 		}
 
 		if (id == "purchasePrice" || id == "firstMtgBalance" || id == "helocLineAmount") {
@@ -109,7 +106,7 @@ $(function(){
 				currHOADues = parseFloat($("#HOADues").val());
 			} else if (id == "other") {
 				other = parseFloat($("#other").val());
-			} else if (id == firstMtgPayment) {
+			} else if (id == "firstMtgPayment") {
 				curr1stMtgPayment = parseFloat($("#firstMtgPayment").val());
 			} else {
 				currQual = parseFloat($("qualPayment").val());
@@ -120,13 +117,15 @@ $(function(){
 			if (currMonthlyIncomeTotal == 0) {
 				currMonthlyIncomeTotal = get_monthly_income(currBorrowerInc, currCoBorrowerInc);
 			}
-
 			currTotalHouse = get_total_housing([currHazardInsurance, currPropertyTaxes, currHOADues, other, curr1stMtgPayment, currQual]);
 			
-
 			$("#totalHousing").html(currTotalHouse);
-			$("#totalPayments").html(get_total_payments([currTotalHouse, currOtherPayments]));
+			$("#sixMonths").html((parseFloat(currTotalHouse) * 6).toFixed(2));
+			$("#nineMonths").html((parseFloat(currTotalHouse) * 9).toFixed(2));
+			$("#twelveMonths").html((parseFloat(currTotalHouse) * 12).toFixed(2));
+			$("#totalPayments").html(currTotalHouse + currOtherPayments);
 
+			backendDTI.html(get_backend_dti((currTotalHouse + currOtherPayments), currMonthlyIncomeTotal));
 			frontendDTI.html(get_frontend_dti(currMonthlyIncomeTotal, currTotalHouse));
 		}
 		if (id == "otherPayments") {
@@ -135,8 +134,10 @@ $(function(){
 				currTotalHouse = parseFloat($("#totalHousing").html());
 			}
 			$("#totalPayments").html(get_total_payments([currTotalHouse, currOtherPayments]));
-		}
 
+			backendDTI.html(get_backend_dti((currTotalHouse + currOtherPayments), currMonthlyIncomeTotal));
+
+		}
 	});
 
 });
@@ -156,12 +157,13 @@ function get_monthly_income (borrower_income, coborrower_income) {
 function get_frontend_dti(monthly_income, total_housing) {
 	return  (total_housing / monthly_income).toFixed(2);
 }
+function get_backend_dti(payments, income) {
+	return (payments / income).toFixed(2);
+}
 function get_cltv(first_mtg_bal, curr_heloc, purchase_price) {
 	return (first_mtg_bal + curr_heloc) / purchase_price;
 }
 function get_first_mtg_ltv(first_mtg_bal, purchase_price) {
-	console.log(first_mtg_bal);
-	console.log(purchase_price);
 	return (first_mtg_bal / purchase_price).toFixed(2);
 }
 function get_second_mtg_ltv(curr_heloc, purchase_price) {
@@ -187,13 +189,8 @@ function get_min(input_a, input_b) {
 }
 
 function pmt(rate_per_period, number_of_payments, present_value){
-	console.log(rate_per_period);
-	console.log(number_of_payments);
-	console.log(present_value);
-
 	// Interest rate exists
 	var q = Math.pow(1 + rate_per_period, number_of_payments);
-	console.log((present_value) * (rate_per_period) / (1 - (Math.pow(1 + rate_per_period, -number_of_payments))));
 	return (present_value) * (rate_per_period) / (1 - (Math.pow(1 + rate_per_period, -number_of_payments)));
 
 }
