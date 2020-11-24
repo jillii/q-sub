@@ -7,6 +7,9 @@
 	margin-bottom: 21px;
 	text-align: center;
 }
+.label {
+	color: pink;
+}
 table {
 	width: 100%;
 	table-layout: fixed;
@@ -35,9 +38,18 @@ table tr td.no-bottom-border {
 input[type=number] {
 	text-align: right;
 }
-input[type=number],
+input,
 select {
-	background-color: #b4c6e7;
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	min-height: 22px;
+	top: 0;
+	left: 0;
+	background-color: #fff;
+	outline: none;
+	border: none;
+	color: #002D72;
 }
 table tr td.cell-break {
 	border-bottom: none;
@@ -49,15 +61,6 @@ table tr td.cell-break {
 }
 .table-stack.bottom {
 	vertical-align: bottom;
-}
-select,
-input {
-	margin-bottom: -1px;
-	margin-left: -1px;
-	width: calc(100% + 2px);
-	height: 23px;
-	border: none;
-	outline: none;
 }
 
 select {
@@ -72,7 +75,6 @@ select option {
 .dollar-amount:before {
 	content: '$';
 	position: absolute;
-	margin-left: -8px;
 }
 input.dollar-amount {
 	background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' version='1.1' height='16px' width='25px'><text x='2' y='13' fill='black' font-size='10' font-family='Calibri'>$</text></svg>");

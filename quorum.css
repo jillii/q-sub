@@ -14,9 +14,10 @@ table {
     font-size: 13px;
     font-weight: 400;
     line-height: 19px;
-    color: #002d72; 
-    background-color: #fff;
+    background-color: #e7e7e7;
+    color: gray;
 }
+
 
 table tr:first-of-type td:not(#frontendDTI),
 table:nth-child(1) tr td:first-of-type,
@@ -74,4 +75,11 @@ input.dollar-amount {
     background-size: 34px;
     background-repeat: no-repeat;
     background-position: left 44%;
+}
+table tr td.label {
+  background-color: transparent;
+  color: #002D72;
+}
+table tr td.label:before {
+  content: none;
 }
