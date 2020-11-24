@@ -155,19 +155,19 @@ function get_monthly_income (borrower_income, coborrower_income) {
 	return (borrower_income + coborrower_income).toFixed(2);
 }
 function get_frontend_dti(monthly_income, total_housing) {
-	return  (total_housing / monthly_income).toFixed(2);
+	return  (total_housing / monthly_income * 100).toFixed(2);
 }
 function get_backend_dti(payments, income) {
-	return (payments / income).toFixed(2);
+	return (payments / income * 100).toFixed(2);
 }
 function get_cltv(first_mtg_bal, curr_heloc, purchase_price) {
-	return (first_mtg_bal + curr_heloc) / purchase_price;
+	return ((first_mtg_bal + curr_heloc) / purchase_price * 100).toFixed(2);
 }
 function get_first_mtg_ltv(first_mtg_bal, purchase_price) {
-	return (first_mtg_bal / purchase_price).toFixed(2);
+	return (first_mtg_bal / purchase_price * 100).toFixed(2);
 }
 function get_second_mtg_ltv(curr_heloc, purchase_price) {
-	return (curr_heloc / purchase_price).toFixed(4);
+	return (curr_heloc / purchase_price * 100).toFixed(4);
 }
 function get_total_housing(housing_expenses) {
 	return sum(housing_expenses);
