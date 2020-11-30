@@ -8,30 +8,30 @@ $(function(){
 		secondMtgLtv     = $("#secondMtgLtv"),
 		qualPayment      = $("#qualPayment"),
 		qInterest        = $("#qInterest"),
-		frontendDTI      = $("#frontendDTI"),
-		backendDTI       = $("#backendDTI"),
+		frontendDTI      = $("#frontendDTI percentage"),
+		backendDTI       = $("#backendDTI percentage"),
 		
-		currPrimeRate     = parseFloat($("#primeRate").val()),
-		currMargin        = parseFloat($("#margin").val());
+		currPrimeRate     = parseFloat($("#primeRate").val()) || 0,
+		currMargin        = parseFloat($("#margin").val()) || 0;
 		currRate          = parseFloat(rateInput.html()),
-		currBorrower      = parseFloat($("#borrowerRate").val()),
-		currCoBorrower    = parseFloat($("#coBorrowerRate").val()),
-		currBorrowerInc   = parseFloat($("#borrowerMonthlyIncome").val()),
-		currCoBorrowerInc = parseFloat($("#coBorrowerMonthlyIncome").val()),
+		currBorrower      = parseFloat($("#borrowerRate").val()) || 0,
+		currCoBorrower    = parseFloat($("#coBorrowerRate").val()) || 0,
+		currBorrowerInc   = parseFloat($("#borrowerMonthlyIncome").val()) || 0,
+		currCoBorrowerInc = parseFloat($("#coBorrowerMonthlyIncome").val()) || 0,
 		currQual          = parseFloat(qualPayment.html()),
-		heloc             = parseFloat($("#helocLineAmount").val()),
+		heloc             = parseFloat($("#helocLineAmount").val()) || 0,
 		currQInterest     = parseFloat(qInterest.html()),
-		currPurchasePrice = parseFloat($("#purchasePrice").val()),
-		curr1stMtgBal     = parseFloat($("#firstMtgBalance").val()),
+		currPurchasePrice = parseFloat($("#purchasePrice").val()) || 0,
+		curr1stMtgBal     = parseFloat($("#firstMtgBalance").val()) || 0,
 	   
-	    currHazardInsurance = parseFloat($("#hazardInsurance").val()),
-		currPropertyTaxes   = parseFloat($("#propertyTaxes").val()),
-		currHOADues         = parseFloat($("#HOADues").val()),
-		other               = parseFloat($("#other").val()),
-		curr1stMtgPayment   = parseFloat($("#firstMtgPayment").val()),
+	    currHazardInsurance = parseFloat($("#hazardInsurance").val()) || 0,
+		currPropertyTaxes   = parseFloat($("#propertyTaxes").val()) || 0,
+		currHOADues         = parseFloat($("#HOADues").val()) || 0,
+		other               = parseFloat($("#other").val()) || 0,
+		curr1stMtgPayment   = parseFloat($("#firstMtgPayment").val()) || 0,
 
 		currMonthlyIncomeTotal = 0,
-		currTotalHouse         = parseFloat($("#totalHousing").html()),
+		currTotalHouse         = parseFloat($("#totalHousing").html()) || 0,
 		currOtherPayments      = 0;
 
 	$(document).on("input", qSub, function(e) {
