@@ -13,14 +13,14 @@ $(function(){
 		
 		currPrimeRate     = parseFloat($("#primeRate").val()) || 0,
 		currMargin        = parseFloat($("#margin").val()) || 0;
-		currRate          = parseFloat(rateInput.html()),
+		currRate          = parseFloat(rateInput.html()) || 0,
 		currBorrower      = parseFloat($("#borrowerRate").val()) || 0,
 		currCoBorrower    = parseFloat($("#coBorrowerRate").val()) || 0,
 		currBorrowerInc   = parseFloat($("#borrowerMonthlyIncome").val()) || 0,
 		currCoBorrowerInc = parseFloat($("#coBorrowerMonthlyIncome").val()) || 0,
-		currQual          = parseFloat(qualPayment.html()),
+		currQual          = parseFloat(qualPayment.html()) || 0,
 		heloc             = parseFloat($("#helocLineAmount").val()) || 0,
-		currQInterest     = parseFloat(qInterest.html()),
+		currQInterest     = parseFloat(qInterest.html()) || 0,
 		currPurchasePrice = parseFloat($("#purchasePrice").val()) || 0,
 		curr1stMtgBal     = parseFloat($("#firstMtgBalance").val()) || 0,
 	   
@@ -33,6 +33,8 @@ $(function(){
 		currMonthlyIncomeTotal = 0,
 		currTotalHouse         = parseFloat($("#totalHousing").html()) || 0,
 		currOtherPayments      = 0;
+
+		console.log(currTotalHouse);
 
 	$(document).on("input", qSub, function(e) {
 		var id = e.target.id;
@@ -119,11 +121,11 @@ $(function(){
 			}
 			currTotalHouse = get_total_housing([currHazardInsurance, currPropertyTaxes, currHOADues, other, curr1stMtgPayment, currQual]);
 			
-			$("#totalHousing").html(currTotalHouse);
+			$("#totalHousing").html(currTotalHouse.toFixed(2));
 			$("#sixMonths").html((parseFloat(currTotalHouse) * 6).toFixed(2));
 			$("#nineMonths").html((parseFloat(currTotalHouse) * 9).toFixed(2));
 			$("#twelveMonths").html((parseFloat(currTotalHouse) * 12).toFixed(2));
-			$("#totalPayments").html(currTotalHouse + currOtherPayments);
+			$("#totalPayments").html((currTotalHouse + currOtherPayments).toFixed(2));
 
 			backendDTI.html(get_backend_dti((currTotalHouse + currOtherPayments), currMonthlyIncomeTotal));
 			frontendDTI.html(get_frontend_dti(currMonthlyIncomeTotal, currTotalHouse));
@@ -133,7 +135,7 @@ $(function(){
 			if (currTotalHouse == 0) {
 				currTotalHouse = parseFloat($("#totalHousing").html());
 			}
-			$("#totalPayments").html(get_total_payments([currTotalHouse, currOtherPayments]));
+			$("#totalPayments").html(get_total_payments([currTotalHouse, currOtherPayments]).toFixed(2));
 
 			backendDTI.html(get_backend_dti((currTotalHouse + currOtherPayments), currMonthlyIncomeTotal));
 

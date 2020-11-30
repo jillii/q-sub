@@ -1,104 +1,109 @@
-#q-sub {
-	max-width: 800px;
-	margin: 0 auto;
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;800&display=swap');
+
+body {
+  margin: 0;
+  font-family: Nunito Sans;
+  box-sizing: border-box;
 }
-.title {
-	display: block;
-	margin-bottom: 21px;
-	text-align: center;
+h1, h2, h3, h4 {
+  margin: 0 0 30px;
+}
+#q-sub {
+  margin: 91px 0;
+}
+.container {
+  max-width: 1100px;
+  width: 90%;
+  margin: 0 auto;
+}
+#page-title--container {
+  background-color: #582C8305;
+  padding: 12px;
+  margin: 40px 0;
+  text-align: center;
+}
+#page-title--container .title {
+  margin: 0;
+  font-size: 18px;
+  line-height: 42px;
+}
+h3 {
+  font-size: 24px;
+  line-height: 42px;
+  font-weight: 800;
+  color: #002D72;
+}
+h4 {
+  font-size: 18px;
+  line-height: 24px;
+  color: #582C83;
+}
+h3 + h4 {
+  margin-top: -6px;
+}
+table tr td {
+  height: 47px;
+  padding: 0 15px;
+  position: relative;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 22px;
+  background-color: #fcfcfc;
+  color: #54565A90;
+}
+table tr td.label {
+  height: unset;
+  padding: 0 0 10px;
+  background-color: transparent;
+  color: #002D72;
 }
 table {
-	width: 100%;
+	width: calc(100% + 80px);
 	table-layout: fixed;
-}
-
-table:nth-child(1),
-table:nth-child(2),
-table:nth-child(3) {
-	table-layout: fixed;
-}
-.inline {
-	table-layout: fixed;
-	display: inline-table;
-	width: 49.7%;
-	vertical-align: baseline;
-}
-table.centered {
-	text-align: center;
-}
-table tr td.cell-centered,
-table tr td.cell-centered input {
-	text-align: center;
-}
-table tr td.no-bottom-border {
-	border-bottom: none;
-}
-input[type=number] {
-	text-align: right;
+  border-spacing: 40px 5px;
+  border-collapse: separate;
+  vertical-align: top;
+  margin-left: -40px;
+  margin-right: -40px;
+  margin-bottom: 25px;
 }
 input,
 select {
 	position: absolute;
 	height: 100%;
 	width: 100%;
-	min-height: 22px;
 	top: 0;
 	left: 0;
-	background-color: #dbe0ef;
+	padding: 0 16px;
+	background-color: #fafbfc;
 	outline: none;
 	border: none;
-	color: #002D72;
+	color: #002D7280;
+	font: inherit;
 }
-table tr td.cell-break {
-	border-bottom: none;
-	min-width: 6px;
-}
-.table-stack {
-	display: inline-flex;
-	flex-direction: column;
-}
-.table-stack.bottom {
-	vertical-align: bottom;
-}
-
 select {
 	cursor: pointer;
 }
 select option {
-	background-color: #fff;
+	color: #002D72;
 }
-.dollar-amount {
-	text-align: right;
-}
-.dollar-amount:before {
+
+td.dollar-amount:before {
 	content: '$';
+  padding-right: 2px;
 }
 input.dollar-amount {
 	background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' version='1.1' height='16px' width='25px'><text x='2' y='13' fill='black' font-size='10' font-family='Calibri'>$</text></svg>");
-	background-size: contain;
-	background-repeat: no-repeat;
+    background-size: 34px;
+    background-repeat: no-repeat;
+    background-position: 4px 10px;
 }
 .percentage:after {
-	content: '%'
+	content: '%';
 }
-table.full {
-	margin-bottom: 15px;
-}
-table.full tr {
-	margin-bottom: 11px;
-	display: flex;
-	flex-direction: column;
-}
-table.full tr td:not(.label) {
-	border-bottom: 2px solid #002D72;
-	height: 18px;
-}
-table.full .label {
-	padding-left: 0;
-	font-size: 16px;
-	height: auto;
-}
-table.full input {
-	padding: 10px;
-	font-size: 16px;
+
+hr {
+  background-color: #54565A;
+  opacity: .3;
+  margin: 40px 0;
 }

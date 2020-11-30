@@ -1,443 +1,438 @@
 <link rel="stylesheet" href="style.css">
-<link rel="stylesheet" href="quorum.css">
 
-<div id="et-main-area">
-	
-<div id="main-content">
+<section id="q-sub">
 	<div class="container">
-		<div id="content-area" class="clearfix">
-			<section id="q-sub">
-				<table class="full">
-					<tr>
-						<td class="label">
-							Borrower Name
-						</td>
-						<td>
-							<input type="text" name="borrower">
-						</td>
-					</tr>
-					<tr>
-						<td class="label">
-							Co-Borrower Name
-						</td>
-						<td>
-							<input type="text" name="co-borrower">
-						</td>
-					</tr>
-				</table>
-				<table class="full">
-					<tr>
-						<td class="label">
-							Loan Officer Name
-						</td>
-						<td>
-							<input type="type" name="loan-officer">
-						</td>
-					</tr>
-					<tr>
-						<td class="label">
-							Loan Officer Company Name
-						</td>
-						<td>
-							<input type="text" name="loan-officer-company">
-						</td>
-					</tr>
-					<tr>
-						<td class="label">
-							Loan Officer MLO #
-						</td>
-						<td>
-							<input type="text" name="loan-officer-MLO">
-						</td>
-					</tr>
-					<tr>
-						<td class="label">
-							Loan Officer Phone #
-						</td>
-						<td>
-							<input type="text" name="loan-officer-phone">
-						</td>
-					</tr>
-					<tr>
-						<td class="label">
-							Loan Officer Email
-						</td>
-						<td>
-							<input type="email" name="loan-officer-email">
-						</td>
-					</tr>
-				</table>
-				<table class="full">
-					<tr>
-						<td class="label">
-							Processor Name
-						</td>
-						<td>
-							<input type="text" name="processor">
-						</td>
-					</tr>
-					<tr>
-						<td class="label">
-							Processor Phone #
-						</td>
-						<td>
-							<input type="text" name="processor-phone">
-						</td>
-					</tr>
-					<tr>
-						<td class="label">
-							Processor Email
-						</td>
-						<td>
-							<input type="text" name="processor-email">
-						</td>
-					</tr>
-				</table>
-				<a 
-					href="https://partners.quorumfcu.org/wp-content/uploads/2020/09/Quorum-Interest-Only-HELOC-Rate-Matrix-and-Program-Guidelines-AE-09-15-2020.pdf" 
-					target="_blank"
-					class="title">Today's Rates</a>
-
-				<table class="centered">
-					<tr>
-						<td class="no-bottom-border label">
-							Prime
-						</td>
-						<td class="no-bottom-border label">
-							Margin
-						</td>
-						<td class="no-bottom-border label">
-							Rate
-						</td>
-					</tr>
-					<tr>
-						<td class="cell-centered">
-							<input  id="primeRate" type="number" step="0.01">
-						</td>
-						<td class="cell-centered">
-							<input  id="margin" type="number" step="0.01">
-						</td>
-						<td class="cell-centered" id="rate">
-						</td>
-					</tr>
-				</table>
-				<table class="inline">
-					<tr>
-						<td class="label">
-							Residence Type
-						</td>
-						<td>
-							<select>
-								<option>Owner Occupied</option>
-								<option>Second/Vacation</option>
-								<option selected="true">Investment</option>
-							</select>
-						</td>
-					</tr>
-					<tr>
-						<td class="label bold">
-							Property Type
-						</td>
-						<td>
-							<select>
-								<option>SFR</option>
-								<option>2 Unit</option>
-								<option>3-4 Unit</option>
-								<option selected="true">Condominium</option>
-								<option>PUD</option>
-							</select>
-						</td>
-					</tr>
-					<tr>
-						<td class="label bold">
-							Type of Submission
-						</td>
-						<td>
-							<select>
-								<option>Simultaneous Purchase</option>
-								<option selected="true">Simultaneous Refi</option>
-								<option>Standalone</option>
-							</select>
-							
-						</td>
-					</tr>
-				</table>
-				<table class="inline">
-					<tr>
-						<td align="center" class="label">
-							Estimated Closing Date
-						</td>
-					</tr>
-					<tr>
-						<td rowspan="2" class="cell-centered">
-							<input type="date" value="2020-10-01">
-						</td>
-					</tr>
-				</table>
-				<table class="inline">
-					<tr>
-						<td align="center" class="label">
-							Credit Score Summary:
-						</td>
-						<td align="center" class="label">
-							Middle Score
-						</td>
-					</tr>
-					<tr>
-						<td align="right" class="label">
-							Borrower
-						</td>
-						<td class="cell-centered">
-							<input type="number" id="borrowerRate" name="borrower-rate">
-						</td>
-					</tr>
-					<tr>
-						<td align="right" class="label">
-							Co-Borrower
-						</td>
-						<td class="cell-centered">
-							<input type="number" id="coBorrowerRate" name="co-borrower-rate">
-						</td>
-					</tr>
-					<tr>
-						<td align="right" class="label">
-							Lower Middle Score for UW
-						</td>
-						<td align="center" id="lower-middle-score-UW">
-						</td>
-					</tr>
-				</table>
-				<table class="inline centered">
-					<tr>
-						<td class="label">
-							Total Monthly Income
-						</td>
-					</tr>
-					<tr>
-						<td class="cell-centered">
-							<input id="borrowerMonthlyIncome" type="number" step="0.01" class="dollar-amount">
-						</td>
-					</tr>
-					<tr>
-						<td class="cell-centered">
-							<input id="coBorrowerMonthlyIncome" type="number" step="0.01" class="dollar-amount">
-						</td>
-					</tr>
-					<tr>
-						<td id="monthlyIncomeSum" class="dollar-amount">
-						</td>
-					</tr>
-				</table>
-				<table>
-					<tr>
-						<td align="center" colspan="4" class="label">
-							LTV Summary:
-						</td>
-					</tr>
-					<tr>
-						<td class="label">
-							Purchase Price/Appraised Value
-						</td>
-						<td>
-							<input id="purchasePrice" class="dollar-amount" type="number" step="0.01">
-						</td>
-						
-						<td class="label">
-							CLTV
-						</td>
-						<td id="cltv" class="percentage">
-							0.0
-						</td>
-					</tr>
-					<tr>
-						<td class="label">
-							Current 1st Mtg balance
-						</td>
-						<td>
-							<input id="firstMtgBalance" class="dollar-amount" type="number" step="0.01">
-						</td>
-						
-						<td class="label">
-							1st mtg LTV	
-						</td>
-						<td id="firstMtgLtv" class="percentage">
-							0.0
-						</td>
-					</tr>
-					<tr>
-						<td class="label">
-							Requested HELOC Line amount
-						</td>
-						<td>
-							<input id="helocLineAmount" class="dollar-amount" type="number" step="0.01">
-						</td>
-						
-						<td class="label">
-							2nd mtg LTV
-						</td>
-						<td id="secondMtgLtv" class="percentage">
-							0.0
-						</td>
-					</tr>
-					<tr>
-						<td class="label">
-							Amount Drawn at Close
-						</td>
-						<td>
-							<input id="drawnAtClose" type="number" step="0.01" class="dollar-amount">
-						</td>
-					</tr>
-					<tr>
-						<td class="label">
-							Total Line Allowed for LTV
-						</td>
-						<td>
-							<input type="number" step="0.01" class="dollar-amount">
-						</td>
-					</tr>
-				</table>
-				<table class="inline">
-					<tr>
-						<td class="label">
-							Debt Ratio Summary
-						</td>
-						<td class="cell-centered label">
-							Residence
-						</td>
-					</tr>
-					<tr>
-						<td class="label">
-							1st Mtg Payment (P & I)
-						</td>
-						<td>
-							<input id="firstMtgPayment" type="number" step="0.01" class="dollar-amount">
-						</td>
-					</tr>
-					<tr>
-						<td class="label">
-							Qual Payment (Prime + Margin; 20 YR Amort)
-						</td>
-						<td id="qualPayment" class="dollar-amount">
-						</td>
-					</tr>
-					<tr>
-						<td class="label">
-							Q Interest Only Payment (Based on a 30 day month)
-						</td>
-						<td class="dollar-amount" id="qInterest">
-						</td>
-					</tr>
-					<tr>
-						<td class="label">
-							Hazard Insurance
-						</td>
-						<td>
-							<input id="hazardInsurance" class="dollar-amount" type="number" step="0.01">
-						</td>
-					</tr>
-					<tr>
-						<td class="label">
-							Property/RE Taxes
-						</td>
-						<td>
-							<input id="propertyTaxes" class="dollar-amount" type="number" step="0.01">
-						</td>
-					</tr>
-					<tr>
-						<td class="label">
-							HOA Dues
-						</td>
-						<td>
-							<input id="HOADues" class="dollar-amount" type="number" step="0.01">
-						</td>
-					</tr>
-					<tr>
-						<td class="label">
-							Other Expenses
-						</td>
-						<td>
-							<input id="other" class="dollar-amount" type="number" step="0.01">
-						</td>
-					</tr>
-					<tr>
-						<td class="label">
-							Total Housing
-						</td>
-						<td id="totalHousing" class="dollar-amount">
-						</td>
-					</tr>
-				</table>
-				<div class="table-stack bottom inline">
-					<table class="centered">
-						<tr>
-							<td class="label">
-								Front End DTI
-							</td>
-							<td id="frontendDTI" class="percentage">
-								<percentage></percentage>
-							</td>
-						</tr>
-						<tr>
-							<td class="label">
-								Back End DTI
-							</td>
-							<td class="percentage" id="backendDTI">
-								<percentage></percentage>
-							</td>
-						</tr>
-					</table>
-					<table>
-						<tr>
-							<td align="center" colspan="2" class="label">
-								Post Closing Assets
-							</td>
-						</tr>
-						<tr>
-							<td class="label">
-								6 Months
-							</td>
-							<td id="sixMonths" class="dollar-amount">
-							</td>
-						</tr>
-						<tr>
-							<td class="label">
-								9 Months
-							</td>
-							<td id="nineMonths" class="dollar-amount">
-							</td>
-						</tr>
-						<tr>
-							<td class="label">
-								12 Months
-							</td>
-							<td id="twelveMonths" class="dollar-amount">
-							</td>
-						</tr>
-					</table>
-				</div>
-				<table class="inline">
-					<tr>
-						<td class="label">
-							Total Other Payments
-						</td>
-						<td>
-							<input class="dollar-amount" id="otherPayments" type="number" step="0.01">
-						</td>
-					</tr>
-					<tr>
-						<td class="label">
-							Total Monthly Payments
-						</td>
-						<td class="dollar-amount" id="totalPayments">
-						</td>
-					</tr>
-				</table>
-			</section>
+		<table>
+			<tr>
+				<td class="label">
+					Borrower Name
+				</td>
+				<td class="label">
+					Co-Borrower Name
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<input type="text" name="borrower">
+				</td>
+				<td>
+					<input type="text" name="co-borrower">
+				</td>
+			</tr>
+		</table>
+		<table>
+			<tr>
+				<td class="label">
+					Loan Officer Name
+				</td>
+				<td class="label">
+					Loan Officer Company Name
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<input type="type" name="loan-officer">
+				</td>
+				<td>
+					<input type="text" name="loan-officer-company">
+				</td>
+			</tr>
+		</table>
+		<table>
+			<tr>
+				<td class="label">
+					Loan Officer MLO #
+				</td>
+				<td class="label">
+					Loan Officer Phone #
+				</td>
+				<td class="label">
+					Loan Officer Email
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<input type="text" name="loan-officer-MLO">
+				</td>
+				<td>
+					<input type="text" name="loan-officer-phone">
+				</td>
+				<td>
+					<input type="email" name="loan-officer-email">
+				</td>
+			</tr>
+		</table>
+		<table>
+			<tr>
+				<td class="label">
+					Processor Name
+				</td>
+				<td class="label">
+					Processor Phone #
+				</td>
+				<td class="label">
+					Processor Email
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<input type="text" name="processor">
+				</td>
+				<td>
+					<input type="text" name="processor-phone">
+				</td>
+				<td>
+					<input type="text" name="processor-email">
+				</td>
+			</tr>
+		</table>
+	</div>
+	<div id="page-title--container">
+		<div class="container">
+			<a  
+				href="https://partners.quorumfcu.org/wp-content/uploads/2020/09/Quorum-Interest-Only-HELOC-Rate-Matrix-and-Program-Guidelines-AE-09-15-2020.pdf" 
+				target="_blank"
+				class="title"><h1 class="title">Today's Rates</h1>
+			</a>
 		</div>
 	</div>
-</div>
+	<div class="container">
+		<table>
+			<tr>
+				<td class="label">
+					Prime
+				</td>
+				<td class="label">
+					Margin
+				</td>
+				<td class="label inactive">
+					Rate
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<input  id="primeRate" type="number" step="0.01">
+				</td>
+				<td>
+					<input  id="margin" type="number" step="0.01">
+				</td>
+				<td id="rate">
+				</td>
+			</tr>
+		</table>
+		<table>
+			<tr>
+				<td class="label">
+					Residence Type
+				</td>
+				<td class="label bold">
+					Property Type
+				</td>
+				<td class="label bold">
+					Type of Submission
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<select>
+						<option>Owner Occupied</option>
+						<option>Second/Vacation</option>
+						<option selected="true">Investment</option>
+					</select>
+				</td>
+				<td>
+					<select>
+						<option>SFR</option>
+						<option>2 Unit</option>
+						<option>3-4 Unit</option>
+						<option selected="true">Condominium</option>
+						<option>PUD</option>
+					</select>
+				</td>
+				<td>
+					<select>
+						<option>Simultaneous Purchase</option>
+						<option selected="true">Simultaneous Refi</option>
+						<option>Standalone</option>
+					</select>
+				</td>
+			</tr>
+		</table>
+		<table>
+			<tr>
+				<td class="label">
+					Estimated Closing Date
+				</td>
+			</tr>
+			<tr>
+				<td rowspan="2">
+					<input type="date" value="2020-10-01">
+				</td>
+			</tr>
+		</table>
+		<hr>
+		<h3>Credit Score Summary:</h3>
+		<table>
+			<tr>
+				<td class="label">
+					Borrower Middle Score
+				</td>
+				<td class="label">
+					Co-Borrower Middle Score
+				</td>
+				<td class="label inactive">
+					Lower Middle Score for UW
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<input type="number" id="borrowerRate" name="borrower-rate">
+				</td>
+				<td>
+					<input type="number" id="coBorrowerRate" name="co-borrower-rate">
+				</td>
+				<td id="lower-middle-score-UW">
+				</td>
+			</tr>
+		</table>
+		<table>
+			<tr>
+				<td class="label">
+					Borrower's Monthly Income
+				</td>
+				<td class="label">
+					Co-Borrower's Monthly Income
+				</td>
+				<td class="label inactive">
+					Total Monthly Income
+				</td>
+			</tr>
+			<tr>
+				<td class="cell-centered">
+					<input id="borrowerMonthlyIncome" type="number" step="0.01" class="dollar-amount">
+				</td>
+				<td class="cell-centered">
+					<input id="coBorrowerMonthlyIncome" type="number" step="0.01" class="dollar-amount">
+				</td>
+				<td id="monthlyIncomeSum" class="dollar-amount">
+				</td>
+			</tr>
+		</table>
+		<hr>
+		<h3>
+			LTV Summary:
+		</h3>
+		<table>
+			<tr>
+				<td class="label">
+					Purchase Price/Appraised Value
+				</td>
+				<td class="label">
+					Current 1st Mtg balance
+				</td>
+				<td class="label">
+					Requested HELOC Line amount
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<input id="purchasePrice" class="dollar-amount" type="number" step="0.01">
+				</td>
+				<td>
+					<input id="firstMtgBalance" class="dollar-amount" type="number" step="0.01">
+				</td>
+				<td>
+					<input id="helocLineAmount" class="dollar-amount" type="number" step="0.01">
+				</td>
+			</tr>
+		</table>
+		<table>
+			<tr>
+			<td class="label">
+					Amount Drawn at Close
+				</td>
+				<td class="label">
+					Total Line Allowed for LTV
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<input id="drawnAtClose" type="number" step="0.01" class="dollar-amount">
+				</td>
+				<td>
+					<input type="number" step="0.01" class="dollar-amount">
+				</td>
+			</tr>
+		</table>
+		<table>
+			<tr>											
+				<td class="label inactive">
+					CLTV
+				</td>
+				<td class="label inactive">
+					1st mtg LTV	
+				</td>
+				<td class="label inactive">
+					2nd mtg LTV
+				</td>
+			</tr>
+			<tr>
+				<td id="cltv" class="percentage">
+					0.0
+				</td>
+				<td id="firstMtgLtv" class="percentage">
+					0.0
+				</td>
+				<td id="secondMtgLtv" class="percentage">
+					0.0
+				</td>
+			</tr>
+		</table>
+		<hr>
+		<h3>
+			Debt Ratio Summary:
+		</h3>
+		<h4>
+			Residence
+		</h4>
+		<table>
+			<tr>
+				<td class="label">
+					1st Mtg Payment (P & I)
+				</td>
+				<td class="label inactive">
+					Qual Payment (Prime + Margin; 20 YR Amort)
+				</td>
+				<td class="label inactive">
+					Q Interest Only Payment (Based on a 30 day month)
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<input id="firstMtgPayment" type="number" step="0.01" class="dollar-amount">
+				</td>
+				<td id="qualPayment" class="dollar-amount">
+				</td>
+				<td class="dollar-amount" id="qInterest">
+				</td>
+			</tr>
+		</table>
+		<table>
+			<tr>
+				<td class="label">
+					Hazard Insurance
+				</td>
+				<td class="label">
+					Property/RE Taxes
+				</td>
+			</tr>
+			<tr>
+
+				<td>
+					<input id="hazardInsurance" class="dollar-amount" type="number" step="0.01">
+				</td>
+				<td>
+					<input id="propertyTaxes" class="dollar-amount" type="number" step="0.01">
+				</td>
+			</tr>
+		</table>
+		<table>
+			<tr>
+				<td class="label">
+					HOA Dues
+				</td>
+				<td class="label">
+					Other Expenses
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<input id="HOADues" class="dollar-amount" type="number" step="0.01">
+				</td>
+				<td>
+					<input id="other" class="dollar-amount" type="number" step="0.01">
+				</td>
+			</tr>
+		</table>
+		<table>
+			<tr>
+				<td class="label inactive">
+					Total Housing
+				</td>
+			</tr>
+			<tr>
+				<td id="totalHousing" class="dollar-amount">
+				</td>
+			</tr>
+		</table>
+		<h4>OR</h4>
+		<table>
+			<tr>
+				<td class="label">
+					Total Other Payments
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<input class="dollar-amount" id="otherPayments" type="number" step="0.01">
+				</td>
+			</tr>
+		</table>
+		<table>
+			<tr>
+				<td class="label inactive">
+					Total Monthly Payments
+				</td>
+			</tr>
+			<tr>
+				<td class="dollar-amount" id="totalPayments">
+				</td>
+			</tr>
+		</table>
+		<table>
+			<tr>
+				<td class="label inactive">
+					Front End DTI
+				</td>
+				<td class="label inactive">
+					Back End DTI
+				</td>
+			</tr>
+			<tr>
+				<td id="frontendDTI" class="percentage">
+					<percentage></percentage>
+				</td>
+				<td class="percentage" id="backendDTI">
+					<percentage></percentage>
+				</td>
+			</tr>
+		</table>
+		<table>
+			<tr>
+				<td class="label inactive">
+					Post Closing Assets (6 mos)
+				</td>
+				<td class="label inactive">
+					Post Closing Assets (9 mos)
+				</td>
+				<td class="label inactive">
+					Post Closing Assets (12 mos)
+				</td>
+			</tr>
+			<tr>
+				<td id="sixMonths" class="dollar-amount">
+				</td>
+				<td id="nineMonths" class="dollar-amount">
+				</td>
+				<td id="twelveMonths" class="dollar-amount">
+				</td>
+			</tr>
+		</table>
+	</div>
+</section>
+
 <script
-  src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-  integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs="
-  crossorigin="anonymous"></script>
+src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs="
+crossorigin="anonymous"></script>
 <script type="text/javascript" src="script.js"></script>
