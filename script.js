@@ -34,8 +34,6 @@ $(function(){
 		currTotalHouse         = parseFloat($("#totalHousing").html()) || 0,
 		currOtherPayments      = 0;
 
-		console.log(currTotalHouse);
-
 	$(document).on("input", qSub, function(e) {
 		var id = e.target.id;
 
@@ -121,11 +119,11 @@ $(function(){
 			}
 			currTotalHouse = get_total_housing([currHazardInsurance, currPropertyTaxes, currHOADues, other, curr1stMtgPayment, currQual]);
 			
-			$("#totalHousing").html(currTotalHouse.toFixed(2));
+			$("#totalHousing").html((parseFloat(currTotalHouse)).toFixed(2));
 			$("#sixMonths").html((parseFloat(currTotalHouse) * 6).toFixed(2));
 			$("#nineMonths").html((parseFloat(currTotalHouse) * 9).toFixed(2));
 			$("#twelveMonths").html((parseFloat(currTotalHouse) * 12).toFixed(2));
-			$("#totalPayments").html((currTotalHouse + currOtherPayments).toFixed(2));
+			$("#totalPayments").html((parseFloat(currTotalHouse + currOtherPayments)).toFixed(2));
 
 			backendDTI.html(get_backend_dti((currTotalHouse + currOtherPayments), currMonthlyIncomeTotal));
 			frontendDTI.html(get_frontend_dti(currMonthlyIncomeTotal, currTotalHouse));
@@ -148,10 +146,10 @@ function get_rate(prime_rate, margin) {
 	return (prime_rate + margin).toFixed(2);;
 }
 function get_qual(curr_rate, curr_heloc) {
-	return pmt(parseFloat(curr_rate / 12), 240, curr_heloc);
+	return (pmt(parseFloat((curr_rate / 100) / 12), 240, curr_heloc) / 100).toFixed(2);
 }
 function get_qInterest(curr_rate, curr_heloc) {
-	return ((curr_heloc * parseFloat(curr_rate / 360)) * 30).toFixed(2);
+	return ((curr_heloc * parseFloat(curr_rate / 360)) * 30 / 100).toFixed(2);
 }
 function get_monthly_income (borrower_income, coborrower_income) {
 	return (borrower_income + coborrower_income).toFixed(2);
@@ -169,7 +167,7 @@ function get_first_mtg_ltv(first_mtg_bal, purchase_price) {
 	return (first_mtg_bal / purchase_price * 100).toFixed(2);
 }
 function get_second_mtg_ltv(curr_heloc, purchase_price) {
-	return (curr_heloc / purchase_price * 100).toFixed(4);
+	return (curr_heloc / purchase_price * 100).toFixed(2);
 }
 function get_total_housing(housing_expenses) {
 	return sum(housing_expenses);
@@ -193,6 +191,6 @@ function get_min(input_a, input_b) {
 function pmt(rate_per_period, number_of_payments, present_value){
 	// Interest rate exists
 	var q = Math.pow(1 + rate_per_period, number_of_payments);
-	return (present_value) * (rate_per_period) / (1 - (Math.pow(1 + rate_per_period, -number_of_payments)));
+	return 100 * ((present_value) * (rate_per_period) / (1 - (Math.pow(1 + rate_per_period, -number_of_payments))));
 
 }
