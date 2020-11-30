@@ -118,6 +118,9 @@ td.input.dollar-amount input {
 .percentage:after {
 	content: '%';
 }
+td.input.percentage:after {
+  float: right;
+}
 hr {
   background-color: #54565A;
   opacity: .3;
