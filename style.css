@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;800&display=swap');
 
 body {
   margin: 0;
@@ -17,7 +17,7 @@ h1, h2, h3, h4 {
   margin: 0 auto;
 }
 #page-title--container {
-  background-color: #582C8305;
+  background-color: #582C8310;
   padding: 12px;
   margin: 40px 0;
   text-align: center;
@@ -48,7 +48,7 @@ table tr td {
   font-size: 16px;
   font-weight: 600;
   line-height: 22px;
-  background-color: #fcfcfc;
+  background-color: #54565A10;
   color: #54565A90;
 }
 table tr td.label {
@@ -56,6 +56,9 @@ table tr td.label {
   padding: 0 0 10px;
   background-color: transparent;
   color: #002D72;
+}
+table tr td.label.inactive {
+  color: #54565A;
 }
 table {
 	width: calc(100% + 80px);
@@ -100,8 +103,9 @@ select {
 select option {
 	color: #002D72;
 }
-td.input {
-  background-color: #fafbfc;
+td.input,
+td.select {
+  background-color: #002D7210;
   color: #002D7280;
 }
 td.dollar-amount:before {
