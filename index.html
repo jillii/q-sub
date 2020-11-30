@@ -1,4 +1,6 @@
 <link rel="stylesheet" href="style.css">
+<script src='https://kit.fontawesome.com/a076d05399.js'></script>
+
 
 <section id="q-sub">
 	<div class="container">
@@ -13,10 +15,10 @@
 			</tr>
 			<tr>
 				<td>
-					<input type="text" name="borrower">
+					<input input type="text" name="borrower">
 				</td>
 				<td>
-					<input type="text" name="co-borrower">
+					<input input type="text" name="co-borrower">
 				</td>
 			</tr>
 		</table>
@@ -31,10 +33,10 @@
 			</tr>
 			<tr>
 				<td>
-					<input type="type" name="loan-officer">
+					<input input type="type" name="loan-officer">
 				</td>
 				<td>
-					<input type="text" name="loan-officer-company">
+					<input input type="text" name="loan-officer-company">
 				</td>
 			</tr>
 		</table>
@@ -52,13 +54,13 @@
 			</tr>
 			<tr>
 				<td>
-					<input type="text" name="loan-officer-MLO">
+					<input input type="text" name="loan-officer-MLO">
 				</td>
 				<td>
-					<input type="text" name="loan-officer-phone">
+					<input input type="text" name="loan-officer-phone">
 				</td>
 				<td>
-					<input type="email" name="loan-officer-email">
+					<input input type="email" name="loan-officer-email">
 				</td>
 			</tr>
 		</table>
@@ -76,13 +78,13 @@
 			</tr>
 			<tr>
 				<td>
-					<input type="text" name="processor">
+					<input input type="text" name="processor">
 				</td>
 				<td>
-					<input type="text" name="processor-phone">
+					<input input type="text" name="processor-phone">
 				</td>
 				<td>
-					<input type="text" name="processor-email">
+					<input input type="text" name="processor-email">
 				</td>
 			</tr>
 		</table>
@@ -110,10 +112,10 @@
 				</td>
 			</tr>
 			<tr>
-				<td>
+				<td class="input dollar-amount">
 					<input  id="primeRate" type="number" step="0.01">
 				</td>
-				<td>
+				<td class="input dollar-amount">
 					<input  id="margin" type="number" step="0.01">
 				</td>
 				<td id="rate">
@@ -125,22 +127,22 @@
 				<td class="label">
 					Residence Type
 				</td>
-				<td class="label bold">
+				<td class="label">
 					Property Type
 				</td>
-				<td class="label bold">
+				<td class="label">
 					Type of Submission
 				</td>
 			</tr>
 			<tr>
-				<td>
+				<td class="select">
 					<select>
 						<option>Owner Occupied</option>
 						<option>Second/Vacation</option>
 						<option selected="true">Investment</option>
 					</select>
 				</td>
-				<td>
+				<td class="select">
 					<select>
 						<option>SFR</option>
 						<option>2 Unit</option>
@@ -149,7 +151,7 @@
 						<option>PUD</option>
 					</select>
 				</td>
-				<td>
+				<td class="select">
 					<select>
 						<option>Simultaneous Purchase</option>
 						<option selected="true">Simultaneous Refi</option>
@@ -165,8 +167,9 @@
 				</td>
 			</tr>
 			<tr>
-				<td rowspan="2">
-					<input type="date" value="2020-10-01">
+				<td>
+					<input input type="date" value="2020-10-01">
+					<i class='far fa-calendar'></i>
 				</td>
 			</tr>
 		</table>
@@ -186,10 +189,10 @@
 			</tr>
 			<tr>
 				<td>
-					<input type="number" id="borrowerRate" name="borrower-rate">
+					<input input type="number" id="borrowerRate" name="borrower-rate">
 				</td>
 				<td>
-					<input type="number" id="coBorrowerRate" name="co-borrower-rate">
+					<input input type="number" id="coBorrowerRate" name="co-borrower-rate">
 				</td>
 				<td id="lower-middle-score-UW">
 				</td>
@@ -208,11 +211,11 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="cell-centered">
-					<input id="borrowerMonthlyIncome" type="number" step="0.01" class="dollar-amount">
+				<td class="input dollar-amount">
+					<input id="borrowerMonthlyIncome" type="number" step="0.01">
 				</td>
-				<td class="cell-centered">
-					<input id="coBorrowerMonthlyIncome" type="number" step="0.01" class="dollar-amount">
+				<td class="input dollar-amount">
+					<input id="coBorrowerMonthlyIncome" type="number" step="0.01">
 				</td>
 				<td id="monthlyIncomeSum" class="dollar-amount">
 				</td>
@@ -235,14 +238,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td>
-					<input id="purchasePrice" class="dollar-amount" type="number" step="0.01">
+				<td class="input dollar-amount">
+					<input id="purchasePrice" type="number" step="0.01">
 				</td>
-				<td>
-					<input id="firstMtgBalance" class="dollar-amount" type="number" step="0.01">
+				<td class="input dollar-amount">
+					<input id="firstMtgBalance" type="number" step="0.01">
 				</td>
-				<td>
-					<input id="helocLineAmount" class="dollar-amount" type="number" step="0.01">
+				<td class="input dollar-amount">
+					<input id="helocLineAmount" type="number" step="0.01">
 				</td>
 			</tr>
 		</table>
@@ -256,11 +259,11 @@
 				</td>
 			</tr>
 			<tr>
-				<td>
-					<input id="drawnAtClose" type="number" step="0.01" class="dollar-amount">
+				<td class="input dollar-amount">
+					<input id="drawnAtClose" type="number" step="0.01">
 				</td>
-				<td>
-					<input type="number" step="0.01" class="dollar-amount">
+				<td class="input dollar-amount">
+					<input type="number" step="0.01">
 				</td>
 			</tr>
 		</table>
@@ -278,13 +281,10 @@
 			</tr>
 			<tr>
 				<td id="cltv" class="percentage">
-					0.0
 				</td>
 				<td id="firstMtgLtv" class="percentage">
-					0.0
 				</td>
 				<td id="secondMtgLtv" class="percentage">
-					0.0
 				</td>
 			</tr>
 		</table>
@@ -308,8 +308,8 @@
 				</td>
 			</tr>
 			<tr>
-				<td>
-					<input id="firstMtgPayment" type="number" step="0.01" class="dollar-amount">
+				<td class="input dollar-amount">
+					<input id="firstMtgPayment" type="number" step="0.01">
 				</td>
 				<td id="qualPayment" class="dollar-amount">
 				</td>
@@ -328,11 +328,11 @@
 			</tr>
 			<tr>
 
-				<td>
-					<input id="hazardInsurance" class="dollar-amount" type="number" step="0.01">
+				<td class="input dollar-amount">
+					<input id="hazardInsurance" type="number" step="0.01">
 				</td>
-				<td>
-					<input id="propertyTaxes" class="dollar-amount" type="number" step="0.01">
+				<td class="input dollar-amount">
+					<input id="propertyTaxes" type="number" step="0.01">
 				</td>
 			</tr>
 		</table>
@@ -346,11 +346,11 @@
 				</td>
 			</tr>
 			<tr>
-				<td>
-					<input id="HOADues" class="dollar-amount" type="number" step="0.01">
+				<td class="input dollar-amount">
+					<input id="HOADues" type="number" step="0.01">
 				</td>
-				<td>
-					<input id="other" class="dollar-amount" type="number" step="0.01">
+				<td class="input dollar-amount">
+					<input id="other" type="number" step="0.01">
 				</td>
 			</tr>
 		</table>
@@ -373,8 +373,8 @@
 				</td>
 			</tr>
 			<tr>
-				<td>
-					<input class="dollar-amount" id="otherPayments" type="number" step="0.01">
+				<td class="input dollar-amount">
+					<input id="otherPayments" type="number" step="0.01">
 				</td>
 			</tr>
 		</table>
