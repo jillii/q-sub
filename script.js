@@ -53,6 +53,7 @@ $(function(){
 			qualPayment.html(currQual);
 			qInterest.html(currQInterest);
 
+			$("#totalPayments").html(get_total_payments([currTotalHouse, currOtherPayments]));
 		}
 		if (id == "borrowerRate" || id == "coBorrowerRate") {
 			if (id == "borrowerRate") {
@@ -117,7 +118,7 @@ $(function(){
 			if (currMonthlyIncomeTotal == 0) {
 				currMonthlyIncomeTotal = get_monthly_income(currBorrowerInc, currCoBorrowerInc);
 			}
-			currTotalHouse = get_total_housing([currHazardInsurance, currPropertyTaxes, currHOADues, other, curr1stMtgPayment, currQual]);
+			currTotalHouse = parseFloat(get_total_housing([currHazardInsurance, currPropertyTaxes, currHOADues, other, curr1stMtgPayment, currQual]));
 			
 			$("#totalHousing").html((parseFloat(currTotalHouse)).toFixed(2));
 			$("#sixMonths").html((parseFloat(currTotalHouse) * 6).toFixed(2));
@@ -133,7 +134,7 @@ $(function(){
 			if (currTotalHouse == 0) {
 				currTotalHouse = parseFloat($("#totalHousing").html());
 			}
-			$("#totalPayments").html(get_total_payments([currTotalHouse, currOtherPayments]).toFixed(2));
+			$("#totalPayments").html(get_total_payments([currTotalHouse, currOtherPayments]));
 
 			backendDTI.html(get_backend_dti((currTotalHouse + currOtherPayments), currMonthlyIncomeTotal));
 
