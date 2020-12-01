@@ -3,76 +3,69 @@
     text-decoration: none;
   }
   h1, h2, h3, h4 {
-    margin: 0 0 21px;
+    margin: 0 0 6px;
   }
   h3 {
-    font-size: 16px;
-    line-height: 24px;
+    font-size: 12px;
+    line-height: 20px;
     font-weight: 800;
     color: #002D72;
   }
   h4 {
-    font-size: 12px;
-    line-height: 16px;
+    display: none;
   }
   #page-title--container {
-    margin: 10px 0;
-  }
-  #page-title--container .title {
-    font-size: 16px;
-    line-height: 24px;
+    display: none;
   }
   #q-sub {
-    margin: 33px 0;
+    margin: 0;
   }
   table {
-    margin-bottom: 0;
-    display: inline-block;
-    width: 45%;
+    margin: 0 -10px 0;
+    border-spacing: 10px 3px;
+    width: calc(100% + 20px);
   }
-  table tr {
-    display: inline-grid;
-  }
+
   table tr td {
-    min-width: 135px;
     min-height: 14px;
     padding: 6px;
     font-size: 10px;
     line-height: 15px;
     height: unset;
     margin-bottom: 10px;
+    text-align: right;
+	background-color: #54565A25;
+    color: #54565A;
+  }
+  table tr td:before {
+  	content: attr(data-title) !important;
+  	float: left;
   }
   input, select {
-    position: relative;
+    position: static;
+    display: inline;
+    width: auto;
     padding: 0;
+    text-align: right;
   }
+  td.input, td.select {
+    background-color: #002D7225;
+    color: #002D72;
+	}
   table tr td.label {
-  	font-size: 9px;
-	padding: 6px;
-	padding-left: 0;
-
+  	display: none;
   }
   hr {
-    margin: 0 0 18px;
+    margin: 12px 0;
   }
   .select:after {
-    border-left: 4px solid transparent;
-    border-right: 4px solid transparent;
-    border-top: 3px solid #002D72;
+    display: none;
   }
-  td.dollar-amount:before,
-  .fa-calendar:before,
-  td.input.percentage:after {
-      float: right;
-      position: absolute;
-      right: 6px;
-      top: 50%;
-      transform: translateY(-50%);
-  }
-  td.dollar-amount {
-    padding-left: 15px;
+  td.dollar-amount:after {
+    content: '$';
+    float: right;
   }
   td.input.dollar-amount input {
     padding-left: 0;
   }
-/*}
+}

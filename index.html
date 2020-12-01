@@ -15,11 +15,11 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="input">
-					<input type="text" name="borrower">
+				<td class="input" data-title="Borrower">
+					<input type="text">
 				</td>
-				<td class="input">
-					<input type="text" name="co-borrower">
+				<td class="input" data-title="Co-Borrower">
+					<input type="text">
 				</td>
 			</tr>
 		</table>
@@ -33,11 +33,11 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="input">
-					<input type="type" name="loan-officer">
+				<td class="input" data-title="Loan Officer">
+					<input type="type">
 				</td>
-				<td class="input">
-					<input type="text" name="loan-officer-company">
+				<td class="input" data-title="Loan Officer Company">
+					<input type="text">
 				</td>
 			</tr>
 		</table>
@@ -54,14 +54,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="input">
-					<input type="text" name="loan-officer-MLO">
+				<td class="input" data-title="Loan Officer MLO">
+					<input type="text">
 				</td>
-				<td class="input">
-					<input type="text" name="loan-officer-phone">
+				<td class="input" data-title="Loan Officer Phone">
+					<input type="text">
 				</td>
-				<td class="input">
-					<input type="email" name="loan-officer-email">
+				<td class="input" data-title="Loan Officer Email">
+					<input type="email">
 				</td>
 			</tr>
 		</table>
@@ -78,14 +78,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="input">
-					<input type="text" name="processor">
+				<td class="input" data-title="processor">
+					<input type="text">
 				</td>
-				<td class="input">
-					<input type="text" name="processor-phone">
+				<td class="input" data-title="processor Phone">
+					<input type="text">
 				</td>
-				<td class="input">
-					<input type="text" name="processor-email">
+				<td class="input" data-title="processor Email">
+					<input type="text">
 				</td>
 			</tr>
 		</table>
@@ -113,13 +113,13 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="input percentage">
-					<input  id="primeRate" type="number" pattern="([0-9]{1,3}),([0-9]{1,3})" step="0.01">
+				<td data-title="Prime Rate" class="input percentage">
+					<input id="primeRate" type="number" step="0.01">
 				</td>
-				<td class="input percentage">
-					<input  id="margin" type="number" pattern="([0-9]{1,3}),([0-9]{1,3})" step="0.01">
+				<td class="input percentage" data-title="Margin">
+					<input id="margin" type="number" step="0.01">
 				</td>
-				<td id="rate" class="percentage">
+				<td data-title="Rate" id="rate" class="percentage">
 				</td>
 			</tr>
 		</table>
@@ -136,15 +136,15 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="select">
+				<td class="select" data-title="Residence Type">
 					<select>
 						<option>Owner Occupied</option>
 						<option>Second/Vacation</option>
 						<option selected="true">Investment</option>
 					</select>
 				</td>
-				<td class="select">
-					<select>
+				<td data-title="Property Type" class="select">
+					<select >
 						<option>SFR</option>
 						<option>2 Unit</option>
 						<option>3-4 Unit</option>
@@ -152,8 +152,8 @@
 						<option>PUD</option>
 					</select>
 				</td>
-				<td class="select">
-					<select>
+				<td data-title="Type of Submission" class="select">
+					<select >
 						<option>Simultaneous Purchase</option>
 						<option selected="true">Simultaneous Refi</option>
 						<option>Standalone</option>
@@ -168,8 +168,8 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="input">
-					<input type="date" value="2020-10-01">
+				<td class="input" data-title="Estimated Closing Date">
+					<input type="date">
 					<i class='far fa-calendar'></i>
 				</td>
 			</tr>
@@ -189,13 +189,13 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="input">
-					<input type="number" pattern="([0-9]{1,3}),([0-9]{1,3})" id="borrowerRate" name="borrower-rate">
+				<td class="input" data-title="Borrower Middle Score">
+					<input type="number" id="borrowerRate">
 				</td>
-				<td class="input">
-					<input type="number" pattern="([0-9]{1,3}),([0-9]{1,3})" id="coBorrowerRate" name="co-borrower-rate">
+				<td class="input" data-title="Co-Borrower Middle Score">
+					<input type="number" id="coBorrowerRate">
 				</td>
-				<td id="lower-middle-score-UW">
+				<td id="lower-middle-score-UW" data-title="Lower Middle Score for UW">
 				</td>
 			</tr>
 		</table>
@@ -212,13 +212,13 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="input dollar-amount">
-					<input id="borrowerMonthlyIncome" type="number" pattern="([0-9]{1,3}),([0-9]{1,3})" step="0.01">
+				<td class="input dollar-amount" data-title="Borrower's Monthly Income">
+					<input id="borrowerMonthlyIncome" type="number" step="0.01">
 				</td>
-				<td class="input dollar-amount">
-					<input id="coBorrowerMonthlyIncome" type="number" pattern="([0-9]{1,3}),([0-9]{1,3})" step="0.01">
+				<td class="input dollar-amount" data-title="Co-Borrower's Monthly Income">
+					<input id="coBorrowerMonthlyIncome" type="number" step="0.01">
 				</td>
-				<td id="monthlyIncomeSum" class="dollar-amount">
+				<td data-title="Total Monthly Income" id="monthlyIncomeSum" class="dollar-amount">
 				</td>
 			</tr>
 		</table>
@@ -239,14 +239,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="input dollar-amount">
-					<input id="purchasePrice" type="number" pattern="([0-9]{1,3}),([0-9]{1,3})" step="0.01">
+				<td class="input dollar-amount" data-title="Purchase Price/Appraised Value">
+					<input id="purchasePrice" type="number" step="0.01">
 				</td>
-				<td class="input dollar-amount">
-					<input id="firstMtgBalance" type="number" pattern="([0-9]{1,3}),([0-9]{1,3})" step="0.01">
+				<td class="input dollar-amount" data-title="Current 1st Mtg balance">
+					<input id="firstMtgBalance" type="number" step="0.01">
 				</td>
-				<td class="input dollar-amount">
-					<input id="helocLineAmount" type="number" pattern="([0-9]{1,3}),([0-9]{1,3})" step="0.01">
+				<td class="input dollar-amount" data-title="Requested HELOC Line amount">
+					<input id="helocLineAmount" type="number" step="0.01">
 				</td>
 			</tr>
 		</table>
@@ -254,17 +254,17 @@
 			<tr>
 			<td class="label">
 					Amount Drawn at Close
-				</td>
+				</td>s
 				<td class="label">
 					Total Line Allowed for LTV
 				</td>
 			</tr>
 			<tr>
-				<td class="input dollar-amount">
-					<input id="drawnAtClose" type="number" pattern="([0-9]{1,3}),([0-9]{1,3})" step="0.01">
+				<td class="input dollar-amount" data-title="Amount Drawn at Close">
+					<input id="drawnAtClose" type="number" step="0.01">
 				</td>
-				<td class="input dollar-amount">
-					<input type="number" pattern="([0-9]{1,3}),([0-9]{1,3})" step="0.01">
+				<td class="input dollar-amount" data-title="Total Line Allowed for LTV">
+					<input type="number" step="0.01">
 				</td>
 			</tr>
 		</table>
@@ -281,11 +281,11 @@
 				</td>
 			</tr>
 			<tr>
-				<td id="cltv" class="percentage">
+				<td data-title="CLTV" id="cltv" class="percentage">
 				</td>
-				<td id="firstMtgLtv" class="percentage">
+				<td data-title="1st mtg LTV" id="firstMtgLtv" class="percentage">
 				</td>
-				<td id="secondMtgLtv" class="percentage">
+				<td data-title="2nd mtg LTV" id="secondMtgLtv" class="percentage">
 				</td>
 			</tr>
 		</table>
@@ -309,12 +309,12 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="input dollar-amount">
-					<input id="firstMtgPayment" type="number" pattern="([0-9]{1,3}),([0-9]{1,3})" step="0.01">
+				<td class="input dollar-amount" data-title="1st Mtg Payment (P & I)">
+					<input id="firstMtgPayment" type="number"  step="0.01">
 				</td>
-				<td id="qualPayment" class="dollar-amount">
+				<td data-title="Qual Payment (Prime + Margin; 20 YR Amort)" id="qualPayment" class="dollar-amount">
 				</td>
-				<td class="dollar-amount" id="qInterest">
+				<td data-title="Q Interest Only Payment (Based on a 30 day month)" class="dollar-amount" id="qInterest">
 				</td>
 			</tr>
 		</table>
@@ -329,11 +329,11 @@
 			</tr>
 			<tr>
 
-				<td class="input dollar-amount">
-					<input id="hazardInsurance" type="number" pattern="([0-9]{1,3}),([0-9]{1,3})" step="0.01">
+				<td class="input dollar-amount" data-title="Hazard Insurance">
+					<input id="hazardInsurance" type="number" step="0.01">
 				</td>
-				<td class="input dollar-amount">
-					<input id="propertyTaxes" type="number" pattern="([0-9]{1,3}),([0-9]{1,3})" step="0.01">
+				<td class="input dollar-amount" data-title="Property/RE Taxes">
+					<input id="propertyTaxes" type="number" step="0.01">
 				</td>
 			</tr>
 		</table>
@@ -347,11 +347,11 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="input dollar-amount">
-					<input id="HOADues" type="number" pattern="([0-9]{1,3}),([0-9]{1,3})" step="0.01">
+				<td class="input dollar-amount" data-title="HOA Dues">
+					<input id="HOADues" type="number" step="0.01">
 				</td>
-				<td class="input dollar-amount">
-					<input id="other" type="number" pattern="([0-9]{1,3}),([0-9]{1,3})" step="0.01">
+				<td class="input dollar-amount" data-title="Other Expenses">
+					<input id="other" type="number" step="0.01">
 				</td>
 			</tr>
 		</table>
@@ -362,11 +362,10 @@
 				</td>
 			</tr>
 			<tr>
-				<td id="totalHousing" class="dollar-amount">
+				<td data-title="Total Housing" id="totalHousing" class="dollar-amount">
 				</td>
 			</tr>
 		</table>
-		<h4>OR</h4>
 		<table>
 			<tr>
 				<td class="label">
@@ -374,8 +373,8 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="input dollar-amount">
-					<input id="otherPayments" type="number" pattern="([0-9]{1,3}),([0-9]{1,3})" step="0.01">
+				<td class="input dollar-amount" data-title="Total Other Payments">
+					<input id="otherPayments" type="number"  step="0.01">
 				</td>
 			</tr>
 		</table>
@@ -386,7 +385,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="dollar-amount" id="totalPayments">
+				<td data-title="Total Monthly Payments" class="dollar-amount" id="totalPayments">
 				</td>
 			</tr>
 		</table>
@@ -400,10 +399,10 @@
 				</td>
 			</tr>
 			<tr>
-				<td id="frontendDTI" class="percentage">
+				<td data-title="Front End DTI" id="frontendDTI" class="percentage">
 					<percentage></percentage>
 				</td>
-				<td class="percentage" id="backendDTI">
+				<td data-title="Back End DTI" class="percentage" id="backendDTI">
 					<percentage></percentage>
 				</td>
 			</tr>
@@ -421,11 +420,11 @@
 				</td>
 			</tr>
 			<tr>
-				<td id="sixMonths" class="dollar-amount">
+				<td data-title="Post Closing Assets (6 mos)" id="sixMonths" class="dollar-amount">
 				</td>
-				<td id="nineMonths" class="dollar-amount">
+				<td data-title="Post Closing Assets (9 mos)" id="nineMonths" class="dollar-amount">
 				</td>
-				<td id="twelveMonths" class="dollar-amount">
+				<td data-title="Post Closing Assets (12 mos)" id="twelveMonths" class="dollar-amount">
 				</td>
 			</tr>
 		</table>
