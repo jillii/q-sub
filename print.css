@@ -27,14 +27,14 @@
   }
 
   table tr td {
-    min-height: 14px;
-    padding: 6px;
-    font-size: 10px;
-    line-height: 15px;
-    height: unset;
-    margin-bottom: 10px;
-    text-align: right;
-	background-color: #54565A25;
+	  min-height: 14px;
+	  padding: 6px;
+	  font-size: 10px;
+	  line-height: 15px;
+	  height: unset;
+	  margin-bottom: 10px;
+	  text-align: right;
+		background-color: #54565A25;
     color: #54565A;
   }
   table tr td:before {
@@ -64,8 +64,22 @@
   td.dollar-amount:after {
     content: '$';
     float: right;
+    padding-left: 2px;
+  }
+  td.percentage:after {
+  	padding-left: 2px;
   }
   td.input.dollar-amount input {
     padding-left: 0;
   }
+  input::-webkit-outer-spin-button,
+	input::-webkit-inner-spin-button {
+	  -webkit-appearance: none;
+	  margin: 0;
+	}
+
+	/* Firefox */
+	input[type=number] {
+	  -moz-appearance: textfield;
+	}
 }
