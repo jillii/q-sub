@@ -1,4 +1,4 @@
-/*@media print {*/
+@media print {
   a {
     text-decoration: none;
   }
@@ -75,4 +75,4 @@
   td.input.dollar-amount input {
     padding-left: 0;
   }
-/*}*/
+/*}

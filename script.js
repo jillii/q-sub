@@ -134,7 +134,7 @@ $(function(){
 			if (currTotalHouse == 0) {
 				currTotalHouse = parseFloat($("#totalHousing").html());
 			}
-			$("#totalPayments").html(get_total_payments([currTotalHouse, currOtherPayments]));
+			$("#totalPayments").html((get_total_payments([currTotalHouse, currOtherPayments])).toFixed(2));
 
 			backendDTI.html(get_backend_dti((currTotalHouse + currOtherPayments), currMonthlyIncomeTotal));
 
