@@ -18,28 +18,27 @@
     display: none;
   }
   #q-sub {
-    margin: 0;
+    margin: 21px 0 0;
   }
   table {
     margin: 0 -10px 0;
     border-spacing: 10px 3px;
     width: calc(100% + 20px);
   }
-
   table tr td {
-	  min-height: 14px;
-	  padding: 6px;
-	  font-size: 10px;
-	  line-height: 15px;
-	  height: unset;
-	  margin-bottom: 10px;
-	  text-align: right;
-		background-color: #54565A25;
+    min-height: 14px;
+    padding: 6px;
+    font-size: 10px;
+    line-height: 15px;
+    height: unset;
+    margin-bottom: 10px;
+    text-align: right;
+    background-color: #54565A25;
     color: #54565A;
   }
   table tr td:before {
-  	content: attr(data-title) !important;
-  	float: left;
+    content: attr(data-title) !important;
+    float: left;
   }
   input, select {
     position: static;
@@ -51,9 +50,9 @@
   td.input, td.select {
     background-color: #002D7225;
     color: #002D72;
-	}
+  }
   table tr td.label {
-  	display: none;
+    display: none;
   }
   hr {
     margin: 12px 0;
@@ -63,23 +62,26 @@
   }
   td.dollar-amount:after {
     content: '$';
-    float: right;
     padding-left: 2px;
   }
   td.percentage:after {
-  	padding-left: 2px;
+    padding-left: 1px;
   }
   td.input.dollar-amount input {
     padding-left: 0;
   }
   input::-webkit-outer-spin-button,
-	input::-webkit-inner-spin-button {
-	  -webkit-appearance: none;
-	  margin: 0;
-	}
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
 
-	/* Firefox */
-	input[type=number] {
-	  -moz-appearance: textfield;
-	}
+  /* Firefox */
+  input[type=number] {
+    -moz-appearance: textfield;
+  }
+}
+
+td.dollar-amount.input::after {
+    padding-left: 0;
 }

@@ -114,10 +114,10 @@
 			</tr>
 			<tr>
 				<td data-title="Prime Rate" class="input percentage">
-					<input id="primeRate" type="number" step="0.01">
+					<input id="primeRate" type="text" data-type="number">
 				</td>
 				<td class="input percentage" data-title="Margin">
-					<input id="margin" type="number" step="0.01">
+					<input id="margin" type="text" data-type="number">
 				</td>
 				<td data-title="Rate" id="rate" class="percentage">
 				</td>
@@ -190,10 +190,10 @@
 			</tr>
 			<tr>
 				<td class="input" data-title="Borrower Middle Score">
-					<input type="number" id="borrowerRate">
+					<input type="text" data-type="number" id="borrowerRate">
 				</td>
 				<td class="input" data-title="Co-Borrower Middle Score">
-					<input type="number" id="coBorrowerRate">
+					<input type="text" data-type="number" id="coBorrowerRate">
 				</td>
 				<td id="lower-middle-score-UW" data-title="Lower Middle Score for UW">
 				</td>
@@ -213,10 +213,10 @@
 			</tr>
 			<tr>
 				<td class="input dollar-amount" data-title="Borrower Monthly Income">
-					<input id="borrowerMonthlyIncome" type="number" step="0.01">
+					<input id="borrowerMonthlyIncome" type="text" data-type="number">
 				</td>
 				<td class="input dollar-amount" data-title="Co-Borrower Monthly Income">
-					<input id="coBorrowerMonthlyIncome" type="number" step="0.01">
+					<input id="coBorrowerMonthlyIncome" type="text" data-type="number">
 				</td>
 				<td data-title="Total Monthly Income" id="monthlyIncomeSum" class="dollar-amount">
 				</td>
@@ -240,13 +240,13 @@
 			</tr>
 			<tr>
 				<td class="input dollar-amount" data-title="Purchase Price/Appraised Value">
-					<input id="purchasePrice" type="number" step="0.01">
+					<input id="purchasePrice" type="text" data-type="number">
 				</td>
 				<td class="input dollar-amount" data-title="Current 1st Mtg balance">
-					<input id="firstMtgBalance" type="number" step="0.01">
+					<input id="firstMtgBalance" type="text" data-type="number">
 				</td>
 				<td class="input dollar-amount" data-title="Requested HELOC Line amount">
-					<input id="helocLineAmount" type="number" step="0.01">
+					<input id="helocLineAmount" type="text" data-type="number">
 				</td>
 			</tr>
 		</table>
@@ -261,10 +261,10 @@
 			</tr>
 			<tr>
 				<td class="input dollar-amount" data-title="Amount Drawn at Close">
-					<input id="drawnAtClose" type="number" step="0.01">
+					<input id="drawnAtClose" type="text" data-type="number">
 				</td>
 				<td class="input dollar-amount" data-title="Total Line Allowed for LTV">
-					<input type="number" step="0.01">
+					<input type="text" data-type="number">
 				</td>
 			</tr>
 		</table>
@@ -310,7 +310,7 @@
 			</tr>
 			<tr>
 				<td class="input dollar-amount" data-title="1st Mtg Payment">
-					<input id="firstMtgPayment" type="number"  step="0.01">
+					<input id="firstMtgPayment" type="text" data-type="number" >
 				</td>
 				<td data-title="Qual Payment" id="qualPayment" class="dollar-amount">
 				</td>
@@ -330,10 +330,10 @@
 			<tr>
 
 				<td class="input dollar-amount" data-title="Hazard Insurance">
-					<input id="hazardInsurance" type="number" step="0.01">
+					<input id="hazardInsurance" type="text" data-type="number">
 				</td>
 				<td class="input dollar-amount" data-title="Property/RE Taxes">
-					<input id="propertyTaxes" type="number" step="0.01">
+					<input id="propertyTaxes" type="text" data-type="number">
 				</td>
 			</tr>
 		</table>
@@ -348,10 +348,10 @@
 			</tr>
 			<tr>
 				<td class="input dollar-amount" data-title="HOA Dues">
-					<input id="HOADues" type="number" step="0.01">
+					<input id="HOADues" type="text" data-type="number">
 				</td>
 				<td class="input dollar-amount" data-title="Other Expenses">
-					<input id="other" type="number" step="0.01">
+					<input id="other" type="text" data-type="number">
 				</td>
 			</tr>
 		</table>
@@ -374,7 +374,7 @@
 			</tr>
 			<tr>
 				<td class="input dollar-amount" data-title="Total Other Payments">
-					<input id="otherPayments" type="number"  step="0.01">
+					<input id="otherPayments" type="text" data-type="number" >
 				</td>
 			</tr>
 		</table>
